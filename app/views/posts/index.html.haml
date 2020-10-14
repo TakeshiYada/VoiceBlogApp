@@ -1,21 +1,27 @@
-.flex.center
+.flex.center.flex-direction
+  .PostPage
+    %header.PageHeader.flex.center.wrap.verticalCenter Voice Blog
+    .CatchCopy.flex.center.wrap.verticalCenter 
+      声の力を信じる限り、
+      %br
+      想いはいつか、必ず届く。
+      %br
+      .CatchCopy__name Takeshi
   .Container
-    .PostPage
-      %header.PageHeader.flex.center.wrap.verticalCenter Voice Blog
-      .PostList
-        - if user_signed_in?
-          - @posts.each do |post|
-            = link_to post_path(post.id), class: "PostItemWrapper" do
-              .PostItem
-                = image_tag post.image, class: 'PostItemImage' if post.image.present?
-                .PostItemInfoWrapper
-                  .PostItemInfo.Read
-                    %span.date 
-                      = post.created_at.strftime("%Y-%m-%d")
-                    %h2.title 
-                      = post.title
-        - else 
-          .message ログインをして下さい。
+    .PostList
+      - if user_signed_in?
+        - @posts.each do |post|
+          = link_to post_path(post.id), class: "PostItemWrapper" do
+            .PostItem
+              = image_tag post.image, class: 'PostItemImage' if post.image.present?
+              .PostItemInfoWrapper
+                .PostItemInfo.Read
+                  %span.date 
+                    = post.created_at.strftime("%Y-%m-%d")
+                  %h2.title 
+                    = post.title
+      - else 
+        .message ログインをして下さい。
 
     %nav.BottomNav_BottomNav__2Vey4
       %ul.BottomNav_NavItems___s-90

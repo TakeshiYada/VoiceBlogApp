@@ -1,0 +1,20 @@
+.flex.center.base
+  .container
+    .Input-box 
+      %h2.Input-box__title 新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .Input-box__field
+          = f.label :メールアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '  PC・携帯どちらでも可',class: 'Input-box__form'
+        .Input-box__field
+          = f.label :パスワード
+          %br/
+          = f.password_field :password, autocomplete: "new-password", placeholder: '  7文字以上の半角英数字',class: 'Input-box__form'
+        .Input-box__field
+          = f.label :パスワード確認
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '  7文字以上の半角英数字',class: 'Input-box__form'
+        .Input-box__actions
+          = f.submit "登録する",class: 'Input-box__submit-btn'

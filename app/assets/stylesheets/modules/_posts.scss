@@ -13,6 +13,11 @@ div{
 
 .center{
   justify-content: center;
+  align-items: center;
+}
+
+.flex-direction{
+  flex-direction: column;
 }
 
 header{
@@ -34,12 +39,31 @@ header{
 .PageHeader{
   height: 63px;
   background: hsla(0,0%,100%,.94);
-  box-shadow: 0 1.5px 20px rgba(0,0,0,.16);
   backdrop-filter: blur(20px);
   font-weight: 700;
   font-size: 24px;
   line-height: 116%;
   letter-spacing: .045em;
+  width: 100vw;
+}
+
+.CatchCopy{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100vw;
+  font-size: 40px;
+  padding: 100px 0;
+  text-align: center;
+  background-image: url('3910606_m.jpg');
+  font-style: italic;
+  flex-direction: column;
+
+  &__name{
+    font-size: 30px;
+    text-align: end;
+    width: 480px;
+    margin-top: 10px;
+  }
 }
 
 .wrap{
@@ -428,27 +452,4 @@ b, strong {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.PostDetailComments{
-  margin-top: 20px;
-  margin-bottom: 300px;
-
-}
-
-.comment-box{
-  display: flex;
-  height: 30px;
-  align-items: center;
-}
-
-.nickname{
-  margin-right: 10px;
-  color: gray;
-}
-
-.CommentListTitle{
-  height: 30px;
-  display: flex;
-  align-items: center;
 }
